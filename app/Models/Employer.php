@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Books extends Model
+class Employer extends Model
 {
     use HasFactory;
-    
-    protected $fillable = ['title', 'author'];
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 }
